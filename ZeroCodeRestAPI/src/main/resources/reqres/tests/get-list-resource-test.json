@@ -1,0 +1,19 @@
+{
+  "scenarioName": "Get List Resource API Test",
+  "steps": [
+    {
+      "id": "getListResourceWithValidId",
+      "name": "getListResourceWithValidId",
+      "url": "/unknown",
+      "operation": "GET",
+      "request": {
+      },
+      "assertions": {
+        "status": 200,
+        "body": {
+          "data": "$NOT.NULL"
+        }
+      }
+    }
+  ]
+}

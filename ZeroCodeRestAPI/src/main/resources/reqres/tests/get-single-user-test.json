@@ -1,0 +1,32 @@
+{
+  "scenarioName": "Get Single Users API Test",
+  "steps": [
+    {
+      "id": "getSingleUserWithValidId",
+      "name": "getSingleUserWithValidId",
+      "url": "/users/2",
+      "operation": "GET",
+      "request": {
+      },
+      "assertions": {
+        "status": 200,
+        "body": {
+          "data": {
+            "id": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "getUserWithInvalidId",
+      "name": "getUserWithInvalidId",
+      "url": "/users/23",
+      "operation": "GET",
+      "request": {
+      },
+      "assertions": {
+        "status": 404
+      }
+    }
+  ]
+}

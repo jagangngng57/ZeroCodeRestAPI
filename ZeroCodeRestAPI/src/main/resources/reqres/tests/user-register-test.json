@@ -1,0 +1,82 @@
+{
+  "scenarioName": "User Register API Test",
+  "steps": [
+    {
+      "id": "userRegisterSuccessful",
+      "name": "userRegisterSuccessful",
+      "url": "/register",
+      "operation": "POST",
+      "request": {
+        "body": {
+          "email": "eve.holt@reqres.in",
+          "password": "pistol"
+        }
+      },
+      "assertions": {
+        "status": 200,
+        "body": {
+          "id": 4,
+          "token": "QpwL5tke4Pnpja7X4"
+        }
+      }
+    },
+    {
+      "id": "userRegisterUnsuccessfulMissingPasswordInRequestBody",
+      "name": "userRegisterUnsuccessfulMissingPasswordInRequestBody",
+      "url": "/register",
+      "operation": "POST",
+      "request": {
+        "body": {
+          "email": "sydney@fife"
+        }
+      },
+      "assertions": {
+        "status": 400,
+        "body": {
+          "error": "Missing password"
+        }
+      }
+    },
+    {
+      "id": "userRegisterUnsuccessfulMissingEmailInRequestBody",
+      "name": "userRegisterUnsuccessfulMissingEmailInRequestBody",
+      "url": "/register",
+      "operation": "POST",
+      "request": {
+        "body": {
+          "password": "sydney@fife"
+        }
+      },
+      "assertions": {
+        "status": 400,
+        "body": {
+          "error": "Missing email or username"
+        }
+      }
+    },
+    {
+      "id": "userRegisterWithInvalidData",
+      "name": "userRegisterWithInvalidData",
+      "url": "/register",
+      "operation": "POST",
+      "request": {
+        "body": {
+          "email": "${0}",
+          "password": "${1}"
+        }
+      },
+      "assertions": {
+        "status": 400,
+        "body": {
+          "error": "${2}"
+        }
+      }
+    }
+  ],
+  "parameterized": {
+    "csvSource": [
+      "test@test778.com,  pass,    Note: Only defined users succeed registration",
+      "'',         '',      Missing email or username"
+    ]
+  }
+}

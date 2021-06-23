@@ -1,0 +1,19 @@
+{
+  "scenarioName": "Get delayed response API Test",
+  "steps": [
+    {
+      "id": "getDelayedResponse",
+      "name": "getDelayedResponse",
+      "url": "/users?delay=3",
+      "operation": "GET",
+      "request": {
+      },
+      "assertions": {
+        "status": 200,
+        "body": {
+          "page": 1
+        }
+      }
+    }
+  ]
+}

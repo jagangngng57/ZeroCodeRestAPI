@@ -1,0 +1,32 @@
+{
+  "scenarioName": "Get Single Resource API Test",
+  "steps": [
+    {
+      "id": "getSingleResourceWithValidId",
+      "name": "getSingleResourceWithValidId",
+      "url": "/unknown/2",
+      "operation": "GET",
+      "request": {
+      },
+      "assertions": {
+        "status": 200,
+        "body": {
+          "data": {
+            "id": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "getResourceWithInvalidId",
+      "name": "getResourceWithInvalidId",
+      "url": "/unknown/23",
+      "operation": "GET",
+      "request": {
+      },
+      "assertions": {
+        "status": 404
+      }
+    }
+  ]
+}

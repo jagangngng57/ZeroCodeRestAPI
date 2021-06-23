@@ -1,0 +1,18 @@
+{
+	"scenarioName": "Get Single User API Test",
+	"steps": [{
+		"id": "getSingleUserWithValidId",
+		"name": "getSingleUserWithValidId",
+		"url": "/users/2",
+		"operation": "GET",
+		"request": {},
+		"assertions": {
+			"status": 200,
+			"body": {
+				"data": {
+					"id": 2
+				}
+			}
+		}
+	}]
+}

@@ -1,0 +1,21 @@
+{
+	"scenarioName": "User Login successful API Test",
+	"steps": [{
+		"id": "loginSuccessful",
+		"name": "loginSuccessful",
+		"url": "/login",
+		"operation": "POST",
+		"request": {
+			"body": {
+				"email": "eve.holt@reqres.in",
+				"password": "cityslicka"
+			}
+		},
+		"assertions": {
+			"status": 200,
+			"body": {
+				"token": "QpwL5tke4Pnpja7X4"
+			}
+		}
+	}]
+}

@@ -1,0 +1,81 @@
+{
+  "scenarioName": "User Login API Test",
+  "steps": [
+    {
+      "id": "loginSuccessful",
+      "name": "loginSuccessful",
+      "url": "/login",
+      "operation": "POST",
+      "request": {
+        "body": {
+          "email": "eve.holt@reqres.in",
+          "password": "cityslicka"
+        }
+      },
+      "assertions": {
+        "status": 200,
+        "body": {
+          "token": "QpwL5tke4Pnpja7X4"
+        }
+      }
+    },
+    {
+      "id": "loginUnsuccessfulMissingPasswordInRequestBody",
+      "name": "loginUnsuccessfulMissingPasswordInRequestBody",
+      "url": "/login",
+      "operation": "POST",
+      "request": {
+        "body": {
+          "email": "sydney@fife"
+        }
+      },
+      "assertions": {
+        "status": 400,
+        "body": {
+          "error": "Missing password"
+        }
+      }
+    },
+    {
+      "id": "loginUnsuccessfulMissingEmailInBody",
+      "name": "loginUnsuccessfulMissingEmailInBody",
+      "url": "/login",
+      "operation": "POST",
+      "request": {
+        "body": {
+          "password": "test@123"
+        }
+      },
+      "assertions": {
+        "status": 400,
+        "body": {
+          "error": "Missing email or username"
+        }
+      }
+    },
+    {
+      "id": "loginWithInvalidData",
+      "name": "loginWithInvalidData",
+      "url": "/login",
+      "operation": "POST",
+      "request": {
+        "body": {
+          "email": "${0}",
+          "password": "${1}"
+        }
+      },
+      "assertions": {
+        "status": 400,
+        "body": {
+          "error": "${2}"
+        }
+      }
+    }
+  ],
+  "parameterized": {
+    "csvSource": [
+      "test@test778.com,  pass,    user not found",
+      "'',         '',      Missing email or username"
+    ]
+  }
+}

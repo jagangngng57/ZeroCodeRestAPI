@@ -1,0 +1,25 @@
+{
+  "scenarioName": "Update User API Test",
+  "steps": [
+    {
+      "id": "updateUser",
+      "name": "updateUser",
+      "url": "/users",
+      "operation": "PUT",
+      "request": {
+        "body": {
+          "name": "test",
+          "job": "master"
+        }
+      },
+      "assertions": {
+        "status": 200,
+        "body": {
+          "name": "test",
+          "job": "master",
+          "updatedAt": "$NOT.NULL"
+        }
+      }
+    }
+  ]
+}

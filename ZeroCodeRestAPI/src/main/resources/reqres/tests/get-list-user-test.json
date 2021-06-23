@@ -1,0 +1,33 @@
+{
+  "scenarioName": "Get List Users API Test",
+  "steps": [
+    {
+      "id": "getUsersListFromPage1",
+      "name": "getUsersListFromPage1",
+      "url": "/users?page=1",
+      "operation": "GET",
+      "request": {
+      },
+      "assertions": {
+        "status": 200,
+        "body": {
+          "page": 1
+        }
+      }
+    },
+    {
+      "id": "getUsersListFromPage2",
+      "name": "getUsersListFromPage2",
+      "url": "/users?page=2",
+      "operation": "GET",
+      "request": {
+      },
+      "assertions": {
+        "status": 200,
+        "body": {
+          "page": 2
+        }
+      }
+    }
+  ]
+}

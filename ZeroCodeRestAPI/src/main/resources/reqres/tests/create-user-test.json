@@ -1,0 +1,37 @@
+{
+  "scenarioName": "Create Users API Test",
+  "steps": [
+    {
+      "id": "createUser",
+      "name": "createUser",
+      "url": "/users",
+      "operation": "POST",
+      "request": {
+        "body": {
+          "name": "test",
+          "job": "leader"
+        }
+      },
+      "assertions": {
+        "status": 201,
+        "body": {
+          "name": "test",
+          "job": "leader"
+        }
+      }
+    },
+    {
+      "id": "createUserWhereRequestBodyIsEmpty",
+      "name": "createUserWhereRequestBodyIsEmpty",
+      "url": "/users",
+      "operation": "POST",
+      "request": {
+        "body": {
+        }
+      },
+      "assertions": {
+        "status": 201
+      }
+    }
+  ]
+}

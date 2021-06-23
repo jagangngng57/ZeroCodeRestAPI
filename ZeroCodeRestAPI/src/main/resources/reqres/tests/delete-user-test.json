@@ -1,0 +1,16 @@
+{
+  "scenarioName": "Delete User API Test",
+  "steps": [
+    {
+      "id": "deleteUser",
+      "name": "deleteUser",
+      "url": "/users/2",
+      "operation": "DELETE",
+      "request": {
+      },
+      "assertions": {
+        "status": 204
+      }
+    }
+  ]
+}
